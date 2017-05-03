@@ -1,0 +1,3 @@
+rootProject.name = 'ReactNativeStarterV1'
+
+include ':app'

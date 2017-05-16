@@ -6,9 +6,9 @@ import {
 } from '../nav/index';
 import {
   REDUCER_NAME as AUTH_REDUCER, authReducer
-} from 'login-screen/reducer';
+} from '../login-screen/reducer';
 
 export default combineReducers({
   [NAV_REDUCER]: navReducer,
-  [SALESFORCE_REDUCER_NAME]: salesforceReducer
+  [AUTH_REDUCER]: authReducer
 })

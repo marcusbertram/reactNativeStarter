@@ -15,7 +15,8 @@ import {
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import {AppReducer, AppWithNavigationState} from '../nav/index';
+import {AppWithNavigationState} from '../nav/index';
+import AppReducer from 'root-reducer/index';
 
 class ReactNativeStarterV1 extends React.Component {
   store = createStore(AppReducer, undefined, compose(applyMiddleware(

@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
+import { styles } from './styles';
 
 import {
   View,
   Text,
-  Button,
-  StyleSheet
+  Button
 } from 'react-native';
 
 const LoginScreen = ({ navigation }) => (
@@ -21,28 +21,10 @@ const LoginScreen = ({ navigation }) => (
     />
   </View>
 );
+
 LoginScreen.navigationOptions = {
   title: 'Log In',
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 LoginScreen.propTypes = {
   navigation: PropTypes.object.isRequired

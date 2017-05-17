@@ -1,9 +1,7 @@
-import React from 'react';
-import {NavigationActions, addNavigationHelpers, StackNavigator} from 'react-navigation';
-import {connect} from 'react-redux';
+import {NavigationActions, StackNavigator} from 'react-navigation';
 
-import LoginScreen from '../login-screen/login-screen.container';
-import MainScreen from '../main-screen/main-screen.container';
+import LoginScreen from '../login-screen/login-screen';
+import MainScreen from '../main-screen/main-screen';
 
 export const AppNavigator = StackNavigator({
   Login: {
@@ -14,29 +12,11 @@ export const AppNavigator = StackNavigator({
   }
 });
 
-export const AppWithNavigationState = connect(state => ({
-  nav: state.nav
-}))(({dispatch, nav}) => (<AppNavigator
-  navigation={addNavigationHelpers({dispatch, state: nav})}
-/>));
-
-const initialNavState = {
-  index: 1,
-  routes: [
-    {
-      key: 'initAuth',
-      routeName: 'Main'
-    },
-    {
-      key: 'initUnauth',
-      routeName: 'Login'
-    }
-  ]
-};
+const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Login'));
 
 export const REDUCER_NAME = 'nav';
 
-export const navReducer = (state = initialNavState, action) => {
+export const navReducer = (state = initialState, action) => {
   if (action.type === 'Login') {
     return AppNavigator.router.getStateForAction(NavigationActions.back(), state);
   }

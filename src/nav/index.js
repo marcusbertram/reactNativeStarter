@@ -1,6 +1,6 @@
 import {NavigationActions, StackNavigator} from 'react-navigation';
 
-import LoginScreen from '../login-screen/login-screen';
+import LoginScreen from '../login-screen/login-screen.container';
 import MainScreen from '../main-screen/main-screen';
 
 export const AppNavigator = StackNavigator({

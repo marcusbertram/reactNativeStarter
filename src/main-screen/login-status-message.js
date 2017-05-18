@@ -1,14 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import {
   View,
   Text
 } from 'react-native';
 import { styles} from './styles';
 
-export const LoginStatusMessage = connect(state => ({
-  isLoggedIn: state.auth.isLoggedIn,
-}))(({ isLoggedIn }) => {
+export const LoginStatusMessage = (isLoggedIn) => {
+  console.warn(isLoggedIn);
   if (!isLoggedIn) {
     return <Text>Please log in</Text>;
   }
@@ -19,4 +17,4 @@ export const LoginStatusMessage = connect(state => ({
       </Text>
     </View>
   );
-});
+};
